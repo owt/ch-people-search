@@ -5,7 +5,7 @@ require 'rest-client'
 
 class CompaniesHouseRepository < Repository
   
-  @@api_key =  ENV['CH_API_KEY'] #'2d0d4ae3-5a0a-4060-beba-822344fa2aba'
+  @@api_key =  ENV['CH_API_KEY']
 
   # Seach company officers
   def search_officers(query)
