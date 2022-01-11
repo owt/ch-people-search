@@ -1,0 +1,34 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Search Results</li>
+  </ol>
+</nav>
+
+<% if @results.length > 0 %>
+  <% @results.each do |result| %>
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title"><%= result['title']%></h5>
+        <h6 class="card-subtitle mb-2 text-muted"><%= result['description']%></h6>
+        <p class="card-text">
+          <%= result['address_snippet'] %>
+        </p>
+        <a 
+          href="https://find-and-update.company-information.service.gov.uk<%= result['links']['self'] %>" 
+          class="card-link" 
+          target="_blank"
+        >
+          More info (external)
+        </a>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">No results</h5>
+    </div>
+  </div>
+<% end %>
+
