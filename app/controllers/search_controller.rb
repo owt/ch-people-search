@@ -4,6 +4,6 @@ class SearchController < ApplicationController
   end
 
   def results(repository = CompaniesHouseRepository.new)
-    @results = repository.search_officers(params['search'])
+    @result = repository.search_officers(params['search'])
   end
 end

@@ -7,7 +7,7 @@ class CompaniesHouseRepository < Repository
   
   @@api_key =  ENV['CH_API_KEY']
 
-  # Seach company offi
+  # Seach company officers
   def search_officers(query)
     url = sprintf('https://api.company-information.service.gov.uk/search/officers?q=%s', query)
 
@@ -17,7 +17,7 @@ class CompaniesHouseRepository < Repository
     )
 
     if response.code == 200
-      return JSON.parse(response.body)['items']
+      return JSON.parse(response.body)
     else
       return null
     end

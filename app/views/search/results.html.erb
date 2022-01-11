@@ -5,8 +5,10 @@
   </ol>
 </nav>
 
-<% if @results.length > 0 %>
-  <% @results.each do |result| %>
+<%= @result %>
+
+<% if @result['items'].length > 0 %>
+  <% @result['items'].each do |result| %>
     <div class="card mb-3">
       <div class="card-body">
         <h5 class="card-title"><%= result['title']%></h5>
